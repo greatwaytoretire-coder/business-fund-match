@@ -1,6 +1,6 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import QuizWrapper from '../../components/QuizWrapper';
+import Quiz from '../../components/Quiz';
 import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../../components/TrustAndHeader';
 import { HelpCircle, BookOpen, ArrowRight } from 'lucide-react';
 import { Metadata } from 'next';
@@ -211,7 +211,7 @@ export default async function GenericSEORoute({ params }: { params: Promise<{ se
       {/* Isolated Client Quiz Layer */}
       <main className="px-4 pb-12">
         <div id="quiz-funnel-section" className="scroll-mt-20">
-  <QuizWrapper />
+  <Quiz onComplete={(data) => console.log(data)} />
 </div>
       </main>
 
