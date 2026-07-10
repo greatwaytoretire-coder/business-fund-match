@@ -1,17 +1,19 @@
 import { NextResponse } from "next/server";
 import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import fs from "fs";
-import path from "path";
 
-// 🔒 Load the service account key dynamically using standard file system methods
-const rootDir = process.cwd();
-const serviceAccountPath = path.join(rootDir, "serviceAccountKey.json");
-const fileContents = fs.readFileSync(serviceAccountPath, "utf8");
-const serviceAccount = JSON.parse(fileContents);
-
+// 🔒 Initialize Firebase Admin using secure Environment Variables
 let currentApp;
+
 if (!getApps().length) {
+  const serviceAccountVar = process.env.FIREBASE_SERVICE_ACCOUNT;
+  
+  if (!serviceAccountVar) {
+    throw new Error("Missing FIREBASE_SERVICE_ACCOUNT environment variable.");
+  }
+
+  const serviceAccount = JSON.parse(serviceAccountVar);
+
   currentApp = initializeApp({
     credential: cert(serviceAccount),
     projectId: "business-fund-match"
@@ -22,7 +24,7 @@ if (!getApps().length) {
 
 const db = getFirestore(currentApp, "default");
 
-// 📥 1. GET HANDLER: Pulls database records to show in Live Admin
+// 📥 1. GET HANDLER: Pulls database records
 export async function GET() {
   try {
     const snapshot = await db.collection("leads").get();
@@ -36,7 +38,6 @@ export async function GET() {
       ...doc.data(),
     }));
 
-    // Sort by newest entries first in memory
     const sortedLeads = leads.sort((a: any, b: any) => {
       const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
       const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
@@ -50,12 +51,11 @@ export async function GET() {
   }
 }
 
-// 📤 2. POST HANDLER: Catches new form submissions and updates admin notes
+// 📤 2. POST HANDLER: Catches new submissions
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    // Handle incoming note updates from the Live Admin dashboard interface
     if (body.id && body.adminNotes !== undefined) {
       await db.collection("leads").doc(body.id).update({
         adminNotes: body.adminNotes
@@ -63,7 +63,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, message: "Notes updated" });
     }
 
-    // Process a brand new lead capture with seamless property mappings
     const leadPayload = {
       businessName: body.businessName || body.fullName || 'General Enterprise',
       fullName: body.fullName || '',
@@ -86,7 +85,7 @@ export async function POST(req: Request) {
   }
 }
 
-// 🗑️ 3. DELETE HANDLER: Permanently removes a lead record by ID
+// 🗑️ 3. DELETE HANDLER: Removes record
 export async function DELETE(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
@@ -96,7 +95,6 @@ export async function DELETE(req: Request) {
       return NextResponse.json({ error: "Missing lead identification ID" }, { status: 400 });
     }
 
-    // Direct deletion from your designated Firestore collection database
     await db.collection("leads").doc(id).delete();
 
     return NextResponse.json({ success: true, message: "Lead permanently removed" });
