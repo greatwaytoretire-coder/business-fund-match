@@ -2,7 +2,7 @@
 import Quiz from './Quiz';
 
 export default function QuizWrapper() {
-  // This satisfies the requirement for the onComplete prop
+  // Providing a function to satisfy the onComplete requirement
   const handleComplete = (data: any) => {
     console.log("Quiz completed", data);
   };
