@@ -2,7 +2,7 @@
 import Quiz from './Quiz';
 
 export default function QuizWrapper() {
-  // This satisfies the required 'onComplete' prop and prevents build failures
+  // This function is required by the Quiz component to build successfully
   const handleComplete = (data: any) => {
     console.log("Quiz completed", data);
   };
