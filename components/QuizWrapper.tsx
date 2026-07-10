@@ -2,7 +2,10 @@
 import Quiz from './Quiz';
 
 export default function QuizWrapper() {
-  // This forces the site to ignore all wrapper logic 
-  // and just show your original Quiz.tsx file.
-  return <Quiz />;
+  // This satisfies the requirement for the onComplete prop
+  const handleComplete = (data: any) => {
+    console.log("Quiz completed", data);
+  };
+
+  return <Quiz onComplete={handleComplete} />;
 }
