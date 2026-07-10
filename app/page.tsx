@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizWrapper from '../components/QuizWrapper';
+import Quiz from '../components/Quiz';
 import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../components/TrustAndHeader';
 import { ShieldCheck } from 'lucide-react';
 
@@ -29,7 +29,7 @@ export default function Home() {
       {/* Main Interactive Interface Block */}
       <main className="flex-grow px-4 pb-12">
         <div className="max-w-4xl mx-auto">
-          <QuizWrapper />
+          <Quiz onComplete={(data) => console.log(data)} />
         </div>
       </main>
 
