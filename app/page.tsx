@@ -1,5 +1,5 @@
 import React from 'react';
-import Quiz from '../components/Quiz';
+import QuizWrapper from '../components/QuizWrapper';
 import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../components/TrustAndHeader';
 import { ShieldCheck } from 'lucide-react';
 
