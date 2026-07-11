@@ -1,6 +1,9 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import QuizWrapper from '../../components/QuizWrapper';
+import QuizWrapper from '../components/QuizWrapper';
+
+// ... later in your JSX
+<QuizWrapper />
 import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../../components/TrustAndHeader';
 import { HelpCircle, BookOpen, ArrowRight } from 'lucide-react';
 import { Metadata } from 'next';
