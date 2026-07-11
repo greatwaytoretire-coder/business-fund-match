@@ -1,5 +1,5 @@
-import Quiz from './components/Quiz';
-import { HeaderNav } from './components/TrustAndHeader';
+import Quiz from '../components/Quiz';
+import { HeaderNav } from '../components/TrustAndHeader';
 
 export default function Home() {
   return (
