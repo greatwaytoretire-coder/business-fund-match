@@ -18,11 +18,12 @@ interface QuizResponse {
   notes?: string;
 }
 
-interface QuizProps {
-  onComplete: (data: any) => void;
-}
+// Delete or comment out these lines:
+// interface QuizProps {
+//   onComplete: (data: any) => void;
+// }
 
-export default function Quiz({ onComplete }: QuizProps) {
+export default function Quiz() {
   const [step, setStep] = useState<number>(1);
   const [isFinalSubmitted, setIsFinalSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState<QuizResponse>({
@@ -91,7 +92,7 @@ export default function Quiz({ onComplete }: QuizProps) {
     }
 
     // 🌟 2. Pass data quietly to the background tracking engine without breaking this view
-    onComplete({ ...formData, matchedSlug: finalSlug, matchedProgram: finalSlug, blockRedirect: true });
+   
   };
 
   // 🌟 THIS IS THE ABSOLUTE LAST SCREEN OF THE FUNNEL NOW

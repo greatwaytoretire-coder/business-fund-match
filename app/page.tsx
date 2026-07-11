@@ -32,7 +32,7 @@ export default function Home() {
       {/* Main Interactive Interface Block */}
       <main className="flex-grow px-4 pb-12">
         <div className="max-w-4xl mx-auto">
-          <Quiz onComplete={(data) => console.log(data)} />
+          <Quiz />
         </div>
       </main>
 

@@ -214,7 +214,7 @@ export default async function GenericSEORoute({ params }: { params: Promise<{ se
       {/* Isolated Client Quiz Layer */}
       <main className="px-4 pb-12">
         <div id="quiz-funnel-section" className="scroll-mt-20">
-  <Quiz onComplete={(data) => console.log(data)} />
+  <Quiz />
 </div>
       </main>
 
