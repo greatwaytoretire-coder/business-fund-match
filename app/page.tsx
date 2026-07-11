@@ -7,7 +7,7 @@ export default function Home() {
       <HeaderNav />
       <div className="max-w-4xl mx-auto py-12">
         <h1 className="text-4xl font-bold text-center mb-8">Match with the Perfect Lender</h1>
-        <Quiz onComplete="{(data)"> console.log("Quiz completed", data)} />
+        <Quiz onComplete={(data) => console.log("Quiz completed", data)} />
       </div>
     </main>
   );
