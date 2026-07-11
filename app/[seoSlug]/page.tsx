@@ -1,5 +1,5 @@
-import Quiz from '../../components/Quiz';
-import { HeaderNav } from '../../components/TrustAndHeader';
+import Quiz from './components/Quiz';
+import { HeaderNav } from './components/TrustAndHeader';
 export default async function GenericSEORoute({ params }: { params: { seoSlug: string } }) {
   return (
     <main className="min-h-screen bg-gray-50">
