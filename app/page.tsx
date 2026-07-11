@@ -1,8 +1,7 @@
-import React from 'react';
-import QuizWrapper from '../components/QuizWrapper';
+import Quiz from '../components/Quiz';
 
 // ... later in your JSX
-<QuizWrapper />
+<Quiz/>
 import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../components/TrustAndHeader';
 import { ShieldCheck } from 'lucide-react';
 
