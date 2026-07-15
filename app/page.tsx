@@ -21,7 +21,7 @@ export default function Home() {
       <div className="flex-grow px-4 pb-12">
         <div className="max-w-4xl mx-auto">
           {/* Using the onComplete prop to log data as requested in the alternative branch */}
-          <Quiz onComplete={(data) => console.log("Quiz data:", data)} />
+          <Quiz />
         </div>
       </div>
 

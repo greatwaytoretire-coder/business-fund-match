@@ -30,7 +30,7 @@ export default function GenericSEORoute({ params }: { params: { seoSlug: string 
         <p className="text-lg text-slate-600 mb-12">{pageContent.description}</p>
         
         <div id="quiz-funnel-section">
-          <Quiz onComplete={(data) => console.log("Quiz submitted:", data)} />
+          <Quiz />
         </div>
       </div>
 
