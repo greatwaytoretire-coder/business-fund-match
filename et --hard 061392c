@@ -1,0 +1,13 @@
+[33m94d5065[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m fix: resolve typescript errors by providing onComplete prop
+[33m1dd7c63[m fix: correct import paths using parent directory notation
+[33mfcf3e1b[m fix: corrected import paths to local components
+[33m00297c4[m fix: remove syntax errors in Quiz component props
+[33m09a1f5f[m fix: restore imports and correct component placement in all files
+[33m6c53b0b[m fix: change to default export in TrustAndHeader
+[33me0e5728[m fix: explicit imports and removal of wrapper
+[33m8bc437f[m fix: update component tag from QuizWrapper to Quiz
+[33m31bbf6e[m fix: replace QuizWrapper with direct Quiz import
+[33m061392c[m fix: remove all onComplete props and cleanup quiz architecture
+[33m16ee378[m fix: finalize quiz architecture with client-side wrapper
+[33m2949c3f[m fix: use client-side wrapper to pass event handler
+[33m312c984[m fix: remove duplicate import and use Quiz component

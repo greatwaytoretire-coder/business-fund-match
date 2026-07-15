@@ -51,17 +51,17 @@ export function HeaderNav() {
         {/* ⚡ MARKETING ACTIONS TIER */}
         <div className="flex items-center gap-4 sm:gap-6">
           <a 
-            href="tel:8005556282" 
-            className="group flex items-center gap-2 rounded-full px-2.5 py-1.5 transition hover:bg-slate-50"
-          >
-            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
-              <Phone size={13} className="fill-blue-600/10" />
-            </div>
-            <div className="hidden flex-col text-left sm:flex">
-              <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 leading-none">Speak to a Specialist</span>
-              <span className="text-xs font-extrabold text-slate-700 tracking-tight mt-0.5">800-555-MATCH</span>
-            </div>
-          </a>
+  href="tel:15176848279"  // <--- Replace with your full phone number (no dashes)
+  className="group flex items-center gap-2 rounded-full px-2.5 py-1.5 transition hover:bg-slate-50"
+>
+  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
+    <Phone size={13} className="fill-blue-600/10" />
+  </div>
+  <div className="hidden flex-col text-left sm:flex">
+    <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 leading-none">Speak to a Specialist</span>
+    <span className="text-xs font-extrabold text-slate-700 tracking-tight mt-0.5">517-684-8279</span> {/* <--- Replace with your display number */}
+  </div>
+</a>
 
           <button 
             onClick={handleScrollToQuiz}
