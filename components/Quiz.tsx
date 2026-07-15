@@ -107,15 +107,23 @@ export default function Quiz({ onComplete }: QuizProps) {
       </div>}
 
       {step >= 10 && (
-        <form onSubmit={handleFinalSubmit} className="space-y-4">
-          <h2 className="text-2xl font-bold mb-4">Apply for Your Offer</h2>
+        <form onSubmit={handleFinalSubmit} className="space-y-4 animate-fadeIn">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold mb-2">We've found your matches!</h2>
+            <p className="text-gray-600 text-sm">Where should we send your personalized lender recommendations?</p>
+          </div>
+          
           <input required placeholder="Full Name" className="w-full p-3 border rounded-lg" onChange={e => setFormData({...formData, fullName: e.target.value})} />
           <input required type="email" placeholder="Email" className="w-full p-3 border rounded-lg" onChange={e => setFormData({...formData, email: e.target.value})} />
           <input required type="tel" placeholder="Phone" className="w-full p-3 border rounded-lg" onChange={e => setFormData({...formData, phone: e.target.value})} />
-          <textarea placeholder="Additional Notes" className="w-full p-3 border rounded-lg h-24" onChange={e => setFormData({...formData, notes: e.target.value})} />
-          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold transition">Submit Pre-Qualification Application</button>
+          <textarea placeholder="Additional Notes (Optional)" className="w-full p-3 border rounded-lg h-24" onChange={e => setFormData({...formData, notes: e.target.value})} />
+          
+          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold transition shadow-lg hover:shadow-blue-200">
+            View My Results
+          </button>
+          
+          <p className="text-center text-xs text-gray-400 mt-2">
+            Secure, 256-bit encrypted submission. Your info is never sold.
+          </p>
         </form>
       )}
-    </div>
-  );
-}

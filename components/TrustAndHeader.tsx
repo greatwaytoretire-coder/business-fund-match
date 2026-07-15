@@ -10,12 +10,11 @@ export default function HeaderNav() {
     const quizElement = document.getElementById('quiz-funnel-section');
     
     if (quizElement) {
-      // If the quiz is on the current page, scroll to it smoothly
+      // If the quiz is found, scroll to it
       quizElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
-      // 🚀 MARKETING FALLBACK: If on the homepage or an informational page, 
-      // instantly route them to the primary onboarding funnel lane.
-      window.location.href = '/startup-business-loans';
+      // If the quiz is NOT found, just log it so we don't 404 redirect
+      console.error("Quiz section not found on page.");
     }
   };
    

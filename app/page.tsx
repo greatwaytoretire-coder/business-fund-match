@@ -15,12 +15,15 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-gray-900 leading-none">
             Match with the Perfect Lender for Your Business Growth
           </h1>
+          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            Complete our 10-step assessment to instantly unlock personalized funding matches tailored to your business needs.
+          </p>
         </div>
       </section>
 
-      <div className="flex-grow px-4 pb-12">
+      {/* THE ID IS BELOW ON THE DIV WRAPPING THE QUIZ */}
+      <div id="quiz-funnel-section" className="flex-grow px-4 pb-12">
         <div className="max-w-4xl mx-auto">
-          {/* Using the onComplete prop to log data as requested in the alternative branch */}
           <Quiz />
         </div>
       </div>
