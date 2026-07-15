@@ -2,7 +2,27 @@
 
 import { useState } from 'react';
 
-export default function Quiz() {
+interface QuizResponse {
+  fundingAmount: string;
+  timeInBusiness: string;
+  monthlyRevenue: string;
+  creditScore: string;
+  hasBusinessBankAccount: string;
+  hasExistingLoans: string;
+  fundingPurpose: string;
+  businessStructure: string;
+  businessState: string;
+  fullName?: string;
+  email?: string;
+  phone?: string;
+  notes?: string;
+}
+
+interface QuizProps {
+  onComplete?: (data: any) => void;
+}
+
+export default function Quiz({ onComplete }: QuizProps) {
   const [step, setStep] = useState<number>(1);
   const [isFinalSubmitted, setIsFinalSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState<any>({
@@ -27,6 +47,9 @@ export default function Quiz() {
       });
       if (response.ok) {
         setIsFinalSubmitted(true);
+        if (onComplete) {
+          onComplete({ ...formData, blockRedirect: true });
+        }
       } else {
         alert("Submission error. Please check the console.");
       }
@@ -54,23 +77,16 @@ export default function Quiz() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-gray-900">Thank You for Submitting!</h2>
           <p className="text-gray-600 font-medium max-w-md mx-auto leading-relaxed">
             Your Pre-Qualification Application has been securely compiled and sent to our underwriting review queue.
           </p>
         </div>
-
-        <div className="bg-gray-50 border border-gray-200 p-4 rounded-xl text-left max-w-md mx-auto">
-          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">What happens next?</h4>
-          <p className="text-xs text-gray-500 leading-relaxed">
-            An account specialist will manually cross-reference your profile metrics against our active lender matrices. We will reach out to you directly via phone or email within 24 business hours to finalize your formal portal submission.
-          </p>
-        </div>
       </div>
     );
   }
+
   return (
     <div className="w-full max-w-xl mx-auto bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
       <p className="text-sm font-semibold text-gray-400 uppercase mb-4">Step {step > 10 ? 10 : step} of 10</p>

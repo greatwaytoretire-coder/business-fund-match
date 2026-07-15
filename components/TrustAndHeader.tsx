@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Star, Phone, ArrowRight } from 'lucide-react';
 
-export function HeaderNav() {
+export default function HeaderNav() {
   const handleScrollToQuiz = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const quizElement = document.getElementById('quiz-funnel-section');
