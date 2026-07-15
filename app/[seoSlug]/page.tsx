@@ -1,5 +1,3 @@
-"use client";
-
 import { notFound } from 'next/navigation';
 import Quiz from '../../components/Quiz';
 import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../../components/TrustAndHeader';
