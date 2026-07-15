@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Quiz from '../../components/Quiz';
-import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../../components/TrustAndHeader';
+import HeaderNav, { TrustSection, TeamSection, ComplianceFooterCTA } from '../../components/TrustAndHeader';
 
 // 📊 1. Content Mapping Matrix
 const seoPageData: Record<string, {
