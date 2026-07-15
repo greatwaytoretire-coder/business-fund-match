@@ -1,4 +1,4 @@
-import { HeaderNav, TrustSection, TeamSection, ComplianceFooterCTA } from '../components/TrustAndHeader';
+import HeaderNav, { TrustSection, TeamSection, ComplianceFooterCTA } from '../components/TrustAndHeader';
 import Quiz from '../components/Quiz';
 import { ShieldCheck } from 'lucide-react';
 
