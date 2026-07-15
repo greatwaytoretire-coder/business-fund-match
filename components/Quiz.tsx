@@ -127,3 +127,6 @@ export default function Quiz({ onComplete }: QuizProps) {
           </p>
         </form>
       )}
+    </div>
+  );
+}
