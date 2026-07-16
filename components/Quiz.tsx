@@ -119,7 +119,7 @@ export default function Quiz({ onComplete }: QuizProps) {
           <textarea placeholder="Additional Notes (Optional)" className="w-full p-3 border rounded-lg h-24" onChange={e => setFormData({...formData, notes: e.target.value})} />
           
           <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold transition shadow-lg hover:shadow-blue-200">
-            View My Results
+            Get My Match  
           </button>
           
           <p className="text-center text-xs text-gray-400 mt-2">
