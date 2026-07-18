@@ -50,7 +50,7 @@ export default function HeaderNav() {
         {/* ⚡ MARKETING ACTIONS TIER */}
         <div className="flex items-center gap-4 sm:gap-6">
           <a 
-  href="tel:15176848279" 
+  href="tel:15172934414" 
   className="group flex items-center gap-2 rounded-full px-2.5 py-1.5 transition hover:bg-slate-50"
 >
   <div className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
